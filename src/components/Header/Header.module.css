@@ -63,6 +63,7 @@
     line-height: .8;
     background: -webkit-linear-gradient(left, #ce4f20, #eee);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
