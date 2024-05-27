@@ -20,11 +20,11 @@ function Header() {
     <header className={styles.header}>
       <h1>
         <span className={styles.firstName}>
-          Place
+          Rashid
         </span> 
         <br/>
         <span className={styles.lastName}>
-          <span className={styles.noWrap}>Holder</span>
+          <span className={styles.noWrap}>Al-Marri</span>
         </span>
       </h1>
 

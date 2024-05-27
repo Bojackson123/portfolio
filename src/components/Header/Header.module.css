@@ -1,4 +1,4 @@
-/* Existing CSS */
+
 
 @keyframes slideOutToRight {
     from {
@@ -22,7 +22,6 @@
     }
 }
 
-/* Existing slide in animations */
 @keyframes slideInFromRight {
     from {
         transform: translateX(100%);
@@ -119,8 +118,6 @@
     transition: all 0.3s ease-in-out;
     background: linear-gradient(to right, #eee, #ce4f20);
 }
-
-
 
 .dropDownBars.active .bar:nth-child(2) {
     opacity: 0;

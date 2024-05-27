@@ -1,6 +1,6 @@
 import {} from 'react';
 import Header from './components/Header/Header';
-import ProfilePicture from './components/ProfilePicture/ProfilePicture';
+import About from './components/About/About';
 import './App.css';
 
 function App() {
@@ -8,8 +8,8 @@ function App() {
   return (
     <>
       <Header />
-      <p>Work in progress . . .</p>
-      <ProfilePicture />
+      <p>Work in Progress . . .</p>
+      <About />
     </>
   )
 }
