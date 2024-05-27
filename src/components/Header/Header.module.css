@@ -1,0 +1,221 @@
+/* Existing CSS */
+
+@keyframes slideOutToRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes slideOutToLeft {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+/* Existing slide in animations */
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* CSS for the Header component */
+.header {
+    height: 100px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    color: white;
+    background-color: black;
+    font-family: 'Elianto', sans-serif;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    padding-left: 20px;
+    line-height: .8;
+    background: -webkit-linear-gradient(left, #ce4f20, #eee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.header p {
+    margin: 0;
+    text-align: center;
+    color: #eee;
+}
+
+.header p span {
+    font-family: 'akaDora', sans-serif;
+    color: #ce4f20
+}
+
+.lastName {
+    padding-left: 25px;
+    margin: 0;
+}
+
+.header i {
+    font-size: 25px;
+}
+
+.header i:hover {
+    cursor: pointer;
+}
+
+.noWrap {
+    white-space: nowrap;
+}
+
+.dropDown {
+    position: relative;
+    padding-right: 25px;
+    padding-left: 144px;
+}
+
+@media screen and (max-width: 1200px) {
+   .dropDown {
+       padding-left: 0;
+   }
+}
+
+.dropDownBars {
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(to right, #eee, #ce4f20);
+}
+
+
+
+.dropDownBars.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.dropDownBars.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.dropDownBars.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.dropDownContent {
+    position: fixed;
+    top: 100px;
+    right: 0;
+    height: 60px;
+    width: 100%;
+    background-color: black;
+    text-align: center;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.dropDownContent a {
+    color: grey;
+    text-decoration: none;
+    padding: 20px;
+    position: relative;
+}
+
+.dropDownContent a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    height: 2px;
+    width: 0;
+    background: linear-gradient(to right,#eee, #ce4f20, #eee);
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.dropDownContent a:hover {
+    color: #fff;
+}
+
+.dropDownContent a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.dropDownContent.active {
+    opacity: 1;
+}
+
+/* Slide in animations */
+.firstContent.active {
+    animation: slideInFromRight 0.5s forwards;
+}
+
+.secondContent.active {
+    animation: slideInFromLeft 0.5s forwards;
+    top: 160px;
+}
+
+.thirdContent.active {
+    animation: slideInFromRight 0.5s forwards;
+    top: 220px;
+}
+
+.fourthContent.active {
+    animation: slideInFromLeft 0.5s forwards;
+    top: 280px;
+}
+
+/* Slide out animations */
+.firstContent.inactive {
+    animation: slideOutToRight 0.5s forwards;
+}
+
+.secondContent.inactive {
+    animation: slideOutToLeft 0.5s forwards;
+    top: 160px;
+}
+
+.thirdContent.inactive {
+    animation: slideOutToRight 0.5s forwards;
+    top: 220px;
+}
+
+.fourthContent.inactive {
+    animation: slideOutToLeft 0.5s forwards;
+    top: 280px;
+}
