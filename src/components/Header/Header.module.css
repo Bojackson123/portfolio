@@ -1,5 +1,3 @@
-
-
 @keyframes slideOutToRight {
     from {
         transform: translateX(0);
@@ -145,6 +143,7 @@
     align-items: center;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
+    transform: translateX(-100%);
 }
 
 .dropDownContent a {
@@ -176,6 +175,7 @@
 
 .dropDownContent.active {
     opacity: 1;
+    transform: translateX(0);
 }
 
 /* Slide in animations */
