@@ -7,7 +7,7 @@ function App() {
   return (
     <>
      <Header />
-     <p>Test</p>
+     <p>Work in progress . . .</p>
     </>
   )
 }
