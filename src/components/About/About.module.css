@@ -5,26 +5,30 @@
     grid-template-areas:
         "title title title"
         "picture info info";
-    width: 1000px;
+    width: 90vw;
+    max-width: 1000px;
     min-width: 300px;
     background-color: white;
-    height: 600px;
+    height: auto;
     margin: 0 auto;
     margin-top: 50px;
     border-radius: 10px;
     position: relative;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .title {
     grid-area: title;
-    width: 950px;
-    height: 50px;
+    width: calc(100%); /* Adjust the width to account for the padding */
+    height: auto;
     background-color: black;
     color: white;
     text-align: center;
     margin: 0 auto;
-    margin-top: 22px;
-    
+    padding: 10px;
+    font-size: 1.5rem;
+    box-sizing: border-box;
 }
 
 .pic {
@@ -33,6 +37,9 @@
     max-width: 100%;
     justify-self: center;
     align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .info {
@@ -45,14 +52,14 @@
         "infoLabel infoValue";
     margin-top: 10px;
     margin-left: 10px;
-    margin-right: 25px;
     border-top: 5px solid black;
+    box-sizing: border-box;
 }
 
 .infoTitle {
     grid-column: 1 / span 2;
     text-align: center;
-    font-size: 30px;
+    font-size: 1.25rem;
     font-weight: bold;
     padding: 10px;
     border-bottom: 5px solid black;
@@ -61,23 +68,63 @@
 }
 
 .infoLabel, .infoValue {
-    padding: 14.8px;
-    border-bottom: 1px solid black; /* Add bottom border */
-    border-right: 1px solid black; /* Add right border */
+    padding: 12.95px;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 1rem;
+    box-sizing: border-box;
 }
 
 .infoLabel {
-    border-right: 1px solid black; /* Add right border */
-    border-left: 1px solid black; /* Add left border */
+    border-left: 1px solid black;
 }
 
 .redacted {
     background-color: black;
     display: inline-block;
     width: 100px; /* Adjust the width as needed */
-    height: 100%;  /* Adjust the height as needed */
+    height: 100%;  
     vertical-align: middle;
 }
 
+@media (max-width: 881px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "title"
+            "picture"
+            "info";
+    }
+
+    .info {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "infoTitle"
+            "infoLabel infoValue";
+        margin-left: 0;
+    }
+
+    .infoLabel, .infoValue {
+        padding: 8px;
+        font-size: 0.875rem;
+    }
+
+    .pic {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .infoTitle {
+        font-size: 1rem;
+    }
+
+    .title {
+        font-size: 1.25rem;
+        padding: 8px;
+    }
+}
