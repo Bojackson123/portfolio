@@ -13,7 +13,7 @@ const randomizeText = (element) => {
     element.innerText = originalText
       .split("")
       .map((letter, index) => {
-        if (index < iteration || letter === '[' || letter === ']') {
+        if (index < iteration || letter === '[' || letter === ']' || letter === ' ') {
           return originalText[index];
         }
         return letters[Math.floor(Math.random() * 26)];

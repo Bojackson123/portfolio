@@ -6,16 +6,11 @@ import randomizeText from '../../utils/randomizeText';
 
 function About() {
   useEffect(() => {
-    const checkWidthAndRandomize = () => {
-      if (window.innerWidth > 508) {
-        const elements = document.querySelectorAll(`[data-value]`);
-        elements.forEach(element => {
-          randomizeText(element);
-        });
-      }
-    };
-
-    checkWidthAndRandomize(); // Run once on mount
+      const elements = document.querySelectorAll(`[data-value]`);
+      elements.forEach(element => {
+        randomizeText(element);
+      });
+  
 
   }, []);
   
