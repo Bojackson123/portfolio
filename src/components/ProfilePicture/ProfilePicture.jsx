@@ -1,14 +1,24 @@
 import styles from './ProfilePicture.module.css';
 import profilePic from '../../assets/pictures/profilePicture.webp';
+import randomizeText from '../../utils/randomizeText';
+import { useEffect } from 'react';
+
 
 function ProfilePicture() {
+    useEffect(() => {
+        const elements = document.querySelectorAll(`[data-value]`);
+        
+        elements.forEach(element => {
+            randomizeText(element);
+        });
+    }, []);
     return (
         <div className={styles.container}>
             <div className={styles.card}>
                 <div className={`${styles.cardFrontImage} ${styles.cardImage}`}>
                     <img className={styles.profilePicture} src={profilePic} alt="profile" />
                     <div className={styles.redactedBar}>
-                        <span>[redacted]</span>
+                        <span data-value="[redacted]">[redacted]</span>
                     </div>
                 </div>
                 <div className={styles.cardFaders}>
@@ -19,16 +29,20 @@ function ProfilePicture() {
             </div>
             <div className={styles.picInfo}>
                 <div className={styles['info-row']}>
-                    <span>Name:</span><span>Rashid Mohd R A Al-Marri</span>
+                    <span data-value="Name:">Name:</span>
+                    <span data-value="Rashid Mohd R A Al-Marri">Rashid Mohd R A Al-Marri</span>
                 </div>
                 <div className={styles['info-row']}>
-                    <span>File Number:</span><span>439782</span>
+                    <span data-value="File Number:">File Number:</span>
+                    <span data-value="439782">439782</span>
                 </div>
                 <div className={styles['info-row']}>
-                    <span>Listed As:</span><span>Web Developer</span>
+                    <span data-value="Listed As:">Listed As:</span>
+                    <span data-value="Web Developer">Web Developer</span>
                 </div>
                 <div className={styles['info-row']}>
-                    <span>Status:</span><span>Unemployed</span>
+                    <span data-value="Status:">Status:</span>
+                    <span data-value="Unemployed">Unemployed</span>
                 </div>
             </div>
         </div>

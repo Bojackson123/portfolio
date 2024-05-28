@@ -1,9 +1,13 @@
-import { useState} from 'react';
+import { useState, useEffect} from 'react';
 import styles from './Header.module.css';
 
 function Header() {
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
+
+  useEffect(() => {
+    
+  }, []);
 
   const handleAnimationEnd = () => {
     setIsAnimating(false);
