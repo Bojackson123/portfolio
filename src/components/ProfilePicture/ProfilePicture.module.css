@@ -28,14 +28,14 @@
     position: relative;
     width: fit-content;
     height: fit-content;
-    margin: auto; /* Center horizontally */
+    margin: auto; 
     margin-top: 10px;
     margin-bottom: 0px;
     border: 5px solid black;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: center; 
+    align-items: center; 
     box-sizing: border-box;
 }
 
@@ -55,11 +55,30 @@
     background-color: black;
     border-radius: 10%;
     position: absolute;
+    transform: translate(-50%, -50%); 
+    transition: opacity 2000ms;
+}
+
+.pic1 {
     top: 35%;
     left: 9%;
-    transform: translate(-50%, -50%); 
     transform: rotate(-12deg);
-    transition: opacity 2000ms;
+}
+
+.pic2 {
+    width: 175px;
+    height: 25px;
+    top: 37%;
+    left: 9%;
+    transform: rotate(-20deg);
+}
+
+.pic3 {
+    width: 175px;
+    height: 25px;
+    top: 91%;
+    left: 26%;
+    transform: rotate(-1deg);
 }
 
 .redactedBar span {
@@ -71,11 +90,33 @@
     transform: translate(-50%, -50%);
 }
 
+.chevron {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 4rem;
+    cursor: pointer;
+    user-select: none;
+    color: black;
+    transition: opacity 2000ms, color 200ms;
+}
+
+.chevron:hover {
+    color: #ce4f20;
+}
+
+.chevron.left {
+    left: 1%; 
+}
+
+.chevron.right {
+    right: 1%; 
+}
+
 .card {
     background-size: cover;
     background-position: center;
     position: relative;
-    cursor: pointer;
     outline: none;
     transition: scale 100ms;
     margin: 0;
@@ -126,6 +167,10 @@
 
 .card:hover .redactedBar {
     opacity: 0;
+}
+
+.card:hover .chevron {
+    opacity: 1;
 }
 
 .cardFader {
