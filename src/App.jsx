@@ -10,6 +10,7 @@ function App() {
       <Header />
       <p>Work in Progress . . .</p>
       <About />
+      
     </>
   )
 }

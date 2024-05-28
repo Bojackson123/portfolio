@@ -130,7 +130,7 @@
 }
 
 .dropDownContent {
-    position: fixed;
+    position: absolute;
     top: 100px;
     right: 0;
     height: 60px;

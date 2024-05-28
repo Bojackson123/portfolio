@@ -217,14 +217,14 @@
     padding: 0;
 }
 
-.info-row {
+.infoRow {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 5px;
 }
 
-.info-row span {
+.infoRow span {
     color: white;
     font-size: 12px;
 }

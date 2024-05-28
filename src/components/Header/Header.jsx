@@ -43,7 +43,8 @@ function Header() {
           <span className={styles.bar}></span>
           <span className={styles.bar}></span>
         </div>
-        <div
+      </div>
+      <div
           className={`${styles.dropDownContent} ${styles.firstContent} ${dropdownVisible ? styles.active : (isAnimating ? styles.inactive : '')}`}
           onAnimationEnd={handleAnimationEnd}>
           <a href="#">Home</a>
@@ -63,7 +64,6 @@ function Header() {
           onAnimationEnd={handleAnimationEnd}>
           <a href="#">Contact Me</a>
         </div>
-      </div>
     </header>
   );
 }

@@ -62,19 +62,19 @@ function ProfilePicture() {
                 </div>
             </div>
             <div className={styles.picInfo}>
-                <div className={styles['info-row']}>
+                <div className={styles.infoRow}>
                     <span data-value="Name:">Name:</span>
                     <span data-value="Rashid Mohd R A Al-Marri">Rashid Mohd R A Al-Marri</span>
                 </div>
-                <div className={styles['info-row']}>
+                <div className={styles.infoRow}>
                     <span data-value="File Number:">File Number:</span>
                     <span data-value="439782">439782</span>
                 </div>
-                <div className={styles['info-row']}>
+                <div className={styles.infoRow}>
                     <span data-value="Listed As:">Listed As:</span>
                     <span data-value="Web Developer">Web Developer</span>
                 </div>
-                <div className={styles['info-row']}>
+                <div className={styles.infoRow}>
                     <span data-value="Status:">Status:</span>
                     <span data-value="Unemployed">Unemployed</span>
                 </div>
