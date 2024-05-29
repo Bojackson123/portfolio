@@ -1,3 +1,40 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 90vw;
+    max-width: 1000px;
+    min-width: 300px;
+    background-color: white;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 50px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 20px;
+    padding-bottom: 0;
+    padding-top: 20px;
+    box-sizing: border-box;
+    font-family: monospace, monospace;
+}
+
+.ciaTitle, .ciaCity {
+    font-weight: bold;
+    
+}
+
+.headerBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.ciaLogo {
+    width: 60px;
+    height: auto;
+}
+
 .container {
     display: grid;
     grid-template-columns: min-content 1fr 1fr;
@@ -11,16 +48,14 @@
     background-color: white;
     height: auto;
     margin: 0 auto;
-    margin-top: 50px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
     position: relative;
     padding: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
     box-sizing: border-box;
     font-family: monospace, monospace;
 }
+
 
 .title {
     grid-area: title;
@@ -72,7 +107,7 @@
 }
 
 .infoLabel, .infoValue {
-    padding: 13.5px;
+    padding: 13.75px;
     border-bottom: 1px solid black;
     border-right: 1px solid black;
     font-weight: bold;
@@ -86,15 +121,12 @@
 
 .redacted {
     background-color: black;
-    display: inline-block;
-    width: 100px; /* Adjust the width as needed */
     height: 100%;  
-    vertical-align: middle;
 }
 
 .containerTwo {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 3fr;
     grid-template-rows: auto 1fr;
     width: 90vw;
     max-width: 1000px;
@@ -102,15 +134,159 @@
     background-color: white;
     height: auto;
     margin: 0 auto;
+    position: relative;
+    padding: 20px;
+    padding-top: 0;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    font-family: monospace, monospace;
+}
+
+.divider{
+    grid-column: span 2;
+    width: 100%;
+    height: 24px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px;
+    padding-top: 0;
+    font-size: 1.5rem;
+    box-sizing: border-box;
+}
+
+.fingerPrint {
+    box-sizing: border-box;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 10px;
+    border-top: 5px solid black;
+    border-left: 5px solid black;
+    border-bottom: 5px solid black;
+    text-wrap: nowrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    min-width: fit-content;
+    
+}
+
+.bioTitleBox {
+    margin-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 5px;
+    grid-column: span 2;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.infoPrintLabel {
+    grid-column: span 2;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    text-align: center;
+    border-right: 1px solid black;
+}
+
+.bioPrintBox {
+    display: grid;
+    grid-column: span 2;
+    position: relative;
+    border-right: 1px solid black;
+    justify-items: center;
+    margin-bottom: 20px;
+}
+
+.bioPrint {
+    aspect-ratio: 2 / 3;
+    width: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.bioAbout {
+    grid-column: 2;
+    margin-top: 10px;
+    border-top: 5px solid black;
+    border-right: 5px solid black;
+    border-bottom: 5px solid black;
+}
+
+.bioAboutText {
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    font-size: .9rem;
+    font-weight: bold;
+    word-spacing: -3px;
+    line-height: 1.3;
+}
+
+.aboutFooter {
+    display: flex;
+    justify-content: space-between;
+    width: 90vw;
+    max-width: 1000px;
+    min-width: 300px;
+    background-color: white;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 50px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    position: relative;
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
     box-sizing: border-box;
-
+    font-family: monospace, monospace;
+    font-weight: bold;
+    font-size: .6rem;
 }
+
+.footerText {
+    display: flex;
+    flex-direction: column;
+    margin-right: 2px;
+}
+
+.topLeftAngle, .topRightAngle, .bottomLeftAngle, .bottomRightAngle {
+    position: absolute;
+    width: 20px; 
+    height: 20px; 
+    border: 3px solid Black; 
+}
+  .topLeftAngle {
+    top: 10px;
+    left: 10px;
+    border-right: none;
+    border-bottom: none;
+  }
+  
+  .topRightAngle {
+    top: 10px;
+    right: 10px;
+    border-left: none;
+    border-bottom: none;
+  }
+  
+  .bottomLeftAngle {
+    bottom: 10px;
+    left: 10px;
+    border-right: none;
+    border-top: none;
+  }
+  
+  .bottomRightAngle {
+    bottom: 10px;
+    right: 10px;
+    border-left: none;
+    border-top: none;
+  }
+
 
 
 @media (max-width: 881px) {
@@ -141,6 +317,25 @@
         justify-content: center;
         align-items: center;
     }
+
+    .containerTwo {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "title"
+            "divider"
+            "fingerPrint";
+    
+    }
+
+    .fingerPrint {
+        display: none;
+    }
+
+    .bioAbout {
+        border-left: 5px solid black;
+    }
+
 }
 
 @media (max-width: 480px) {
