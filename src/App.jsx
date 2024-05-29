@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Header />
-      <p>Work in Progress . . .</p>
+      <p className='wip'>Work in Progress . . .</p>
       <About />
       
     </>
