@@ -28,11 +28,12 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    padding-bottom: 10px;
 }
 
 .ciaLogo {
     width: 60px;
-    height: auto;
+    height: 60px;
 }
 
 .container {
@@ -51,7 +52,7 @@
     position: relative;
     padding: 20px;
     padding-bottom: 10px;
-    padding-top: 10px;
+    padding-top: 0;
     box-sizing: border-box;
     font-family: monospace, monospace;
 }

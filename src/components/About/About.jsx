@@ -4,7 +4,7 @@ import ProfilePicture from '../ProfilePicture/ProfilePicture';
 import randomizeText from '../../utils/randomizeText';
 import randomizeTextFast from '../../utils/randomizeTextFast';
 import fingerprint from '../../assets/pictures/fingerprint.png';
-import ciaLogo from '../../assets/pictures/ciaLogo.svg';
+import ciaLogo from '../../assets/pictures/ciaLogo.png';
 
 
 const bioText = {
@@ -35,7 +35,7 @@ function About() {
           <span className={styles.ciaTitle} data-value="CENTRAL INTELLIGENCE AGENCY">CENTRAL INTELLIGENCE AGENCY</span>
           <span className={styles.ciaCity} data-value="Washington DC, 20505">Washington DC, 20505</span>
         </div>
-        <object className={styles.ciaLogo} data={ciaLogo} type="image/svg+xml"></object>
+        <img className={styles.ciaLogo} src={ciaLogo} alt="cia logo" />
       </div>
       <div className={styles.container}>
         <h1 className={styles.title} data-value="ABOUT ME">ABOUT ME</h1>
