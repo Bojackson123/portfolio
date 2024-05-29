@@ -348,6 +348,10 @@
         font-size: 1.25rem;
         padding: 8px;
     }
+
+    .bioAboutText {
+        line-height: 1.5;
+    }
 }
 
 
