@@ -31,10 +31,12 @@ function Header() {
           <span className={styles.noWrap}>Al-Marri</span>
         </span>
       </h1>
-
-      <p>
-        Web Developer <span>|</span> Software Engineer <span>|</span>  Computer Scientist <span>|</span>  AI Enthusiast
-      </p>
+      <div className={styles.links}>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Projects</a>
+        <a href="#">Contact Me</a>
+      </div>
       <div className={styles.dropDown}>
         <div 
           className={`${styles.dropDownBars} ${dropdownVisible ? styles.active : ''}`}

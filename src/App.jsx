@@ -1,5 +1,6 @@
 import {} from 'react';
-import Header from './components/Header/Header';
+import Hero from './components/Hero/Hero';
+import Footer from './components/Footer/Footer';
 import About from './components/About/About';
 import './App.css';
 
@@ -7,10 +8,9 @@ function App() {
 
   return (
     <>
-      <Header />
-      <p className='wip'>Work in Progress . . .</p>
+      <Hero />
       <About />
-      
+      <Footer />
     </>
   )
 }

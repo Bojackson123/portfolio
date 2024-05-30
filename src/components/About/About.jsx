@@ -29,7 +29,8 @@ function About() {
   }, []);
   
   return (
-    <>
+    <div className={styles.about}>
+      <div>
       <div className={styles.header}>
         <div className={styles.headerBox}>
           <span className={styles.ciaTitle} data-value="CENTRAL INTELLIGENCE AGENCY">CENTRAL INTELLIGENCE AGENCY</span>
@@ -122,7 +123,8 @@ function About() {
         </div>
 
       </div>
-    </>
+      </div>
+    </div>
   );
 }
 
