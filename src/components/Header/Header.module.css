@@ -45,14 +45,16 @@
 /* CSS for the Header component */
 .header {
     height: 100px;
+    width: 100%;
     display: flex;
     justify-content: space-between; 
     align-items: center;
     color: white;
-    background-color: transparent;
+    background-color: black;
     font-family: 'Elianto', sans-serif;
     overflow: hidden;
-    z-index: 10;
+    z-index: 100;
+    position: fixed;
 }
 
 .header h1 {
@@ -179,13 +181,13 @@
 }
 
 .dropDownContent {
-    position: absolute;
+    position: fixed;
     top: 100px;
     right: 0;
     left: 0;
     height: 60px;
     width: 100%;
-    background-color: transparent;
+    background-color: black;
     text-align: center;
     z-index: 10;
     display: flex;

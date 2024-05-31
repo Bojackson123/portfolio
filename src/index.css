@@ -28,6 +28,9 @@
   margin: 0;
   overflow-x: hidden;
   /* background-color: black; */
+  --container-width: 90vw;
+  --container-max-width: 1000px;
+  --container-min-width: 300px;
 }
 
 * {

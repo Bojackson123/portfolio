@@ -1,10 +1,22 @@
 .about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding-top: 20px;
-    height: inherit;
+    height: auto;
+    width: 100%;
     background: black;
+    z-index: 10;
+    box-sizing: border-box;
+    position: relative;
 }
 
-
+@media screen and (max-width: 768px) {
+    .about {
+        height: auto;
+    }
+    
+}
 
 .header {
     display: flex;
@@ -24,11 +36,12 @@
     padding-top: 20px;
     box-sizing: border-box;
     font-family: monospace, monospace;
+    z-index: 100;
 }
 
 .ciaTitle, .ciaCity {
     font-weight: bold;
-    
+    z-index: 10;
 }
 
 .headerBox {
@@ -41,6 +54,7 @@
 .ciaLogo {
     width: 60px;
     height: 60px;
+    z-index: 10;
 }
 
 .container {
@@ -62,6 +76,7 @@
     padding-top: 0;
     box-sizing: border-box;
     font-family: monospace, monospace;
+    z-index: 11;
 }
 
 
@@ -148,6 +163,7 @@
     padding-bottom: 10px;
     box-sizing: border-box;
     font-family: monospace, monospace;
+    z-index: 11;
 }
 
 .divider{

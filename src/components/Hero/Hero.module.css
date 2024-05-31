@@ -6,24 +6,146 @@
 }
 
 .hero {
-    background-image: url('../../assets/heroPhotos/hero3.jpg');
     height: 100vh;
-    background-position: center;
-    background-size: cover;
+    
     position: relative;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.heroImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.heroContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    font-family: 'Elianto', sans-serif;
+    position: fixed;
+    z-index: 1;
+    gap: 25px;
+}
+
+.heroContent h1{
+    font-size: 3rem;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+}
+
+.heroSubtitleContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.heroSubtitle{
+    font-size: 1rem;
+    text-align: center;
+    padding: 10px;
+    z-index: 1;
+}
+
+.heroSubtitleContainer span {
+    font-family: 'akaDora', sans-serif;
+}
+
+.heroSocialsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    z-index: 1;
+  }
+
+.heroSocialsContainer a {
+    width: 24px;
+    height: 24px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+  
+.heroSocials {
+    width: 24px;
+    height: 24px;
+}
+
+.heroButton {
+    background-color: transparent; 
+    color: white; 
+    border: 2px solid white; 
+    border-radius: 20px; 
+    padding: 10px 20px; 
+    font-size: 1rem; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'elianto', sans-serif;
+    margin-top: 50px;
+}
+
+.heroButton:hover {
+    background-color: black;  
+}
+
+
+.scrollButton {
+    width: 30px;
+    height: 60px;
+    border: 2px solid white;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.scrollButton:hover {
+    background-color: black;
+}
+
+.scrollButton::before {
+    content: '';
+    border: solid rgba(255, 255, 255, 0.5);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 5px;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+.scrollButton:hover::before {
+    transform: rotate(45deg) scale(1.2);
+    border: solid white;
+    border-width: 0 2px 2px 0;
 }
 
 
 
 .blackScreen {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    color: white;
 }
