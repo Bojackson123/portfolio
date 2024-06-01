@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     padding-top: 20px;
+    padding-bottom: 20px;
     height: auto;
     width: 100%;
     background: black;
@@ -33,7 +34,7 @@
     border-top-right-radius: 10px;
     padding: 20px;
     padding-bottom: 0;
-    padding-top: 20px;
+    margin-top: 50px;
     box-sizing: border-box;
     font-family: monospace, monospace;
     z-index: 100;
@@ -257,6 +258,7 @@
     background-color: white;
     height: auto;
     margin: 0 auto;
+    margin-bottom: 50px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     border-bottom-left-radius: 10px;
