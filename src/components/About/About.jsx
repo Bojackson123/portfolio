@@ -17,14 +17,20 @@ const bioText = {
 
 const About = forwardRef(({ isScrolled }, ref) => {
   useEffect(() => {
-    if (isScrolled) {
+    const isSmallViewport = window.innerWidth < 768; // Adjust this value as needed
+    console.log(`isScrolled: ${isScrolled}, isSmallViewport: ${isSmallViewport}`);
+
+    if (isScrolled && !isSmallViewport) {
+      console.log('Running text randomization');
       const elements = document.querySelectorAll(`[data-value]`);
       elements.forEach(element => {
+        console.log(`Randomizing text for element: ${element}`);
         randomizeText(element);
       });
 
       const elementsFast = document.querySelectorAll(`[data-fast]`);
       elementsFast.forEach(element => {
+        console.log(`Randomizing text fast for element: ${element}`);
         randomizeTextFast(element);
       });
     }

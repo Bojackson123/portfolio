@@ -43,19 +43,26 @@
     padding: 0;
     z-index: 1;
     position: relative;
-    width: max-content;
     font-family: 'Source Code Pro', monospace;
     display: flex;
     align-items: center;
-    white-space: pre;
     flex-wrap: wrap;
+    white-space: normal; /* Allow text to wrap */
+    width: auto; /* Adjust width to allow wrapping */
   }
+
+  @media screen and (max-width: 550px) {
+    .caret {
+      display: none;
+    }
+    
+  }
+ 
   
   .caret {
     font-size: 3rem;
     animation: blink 1s step-end infinite;
     font-family: 'Source Code Pro', monospace;
-    bottom: 100px
   }
   
   @keyframes blink {

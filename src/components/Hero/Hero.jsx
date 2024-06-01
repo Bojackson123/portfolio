@@ -14,7 +14,7 @@ function Hero({ scrollToAbout, isScrolled }) {
   const caretRef = useRef(null);
 
   useEffect(() => {
-    const text = " Hello, I am Bojack.";
+    const text = " Hello, I am Rashid.";
     let index = 0;
     const speed = 100;
 

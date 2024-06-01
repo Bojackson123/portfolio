@@ -21,11 +21,11 @@ function Header({ isScrolled }) {
     <header className={`${styles.header} ${isScrolled ? styles.blackBackground : ''}`}>
       <h1>
         <span className={styles.firstName}>
-          Place
+          Rashid
         </span> 
         <br/>
         <span className={styles.lastName}>
-          <span className={styles.noWrap}>Holder</span>
+          <span className={styles.noWrap}>Al-Marri</span>
         </span>
       </h1>
       <div className={styles.links}>

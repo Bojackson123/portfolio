@@ -33,13 +33,16 @@ function ProfilePicture() {
     };
 
     useEffect(() => {
-        const elements = document.querySelectorAll(`[data-value]`);
-        elements.forEach(element => {
-        randomizeText(element);
-        });
-       
-  
-    }, []);
+        const isSmallViewport = window.innerWidth < 400;
+    
+        if ( !isSmallViewport) {
+          
+          const elements = document.querySelectorAll(`[data-value]`);
+          elements.forEach(element => {
+            randomizeText(element);
+          });
+        }
+      }, []);
     return (
         <div className={styles.container}>
             <div className={styles.card}>
