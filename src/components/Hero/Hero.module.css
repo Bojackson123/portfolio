@@ -1,21 +1,19 @@
-.wip{
-    color: white;
-    padding-left: 20px;
-    position: absolute;
-    z-index: 10;
-}
-
-.hero {
+:root {
+    --bg-color: black;
+    --typewriterSpeed: .5s;
+    --typewriterCharacters: 19;
+  }
+  
+  .hero {
     height: 100vh;
-    
     position: relative;
     color: white;
     display: flex;
     flex-direction: column;
-}
-
-
-.heroImage {
+    transition: opacity 0.3s ease;
+  }
+  
+  .heroImage {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -23,9 +21,9 @@
     top: 0;
     left: 0;
     z-index: -1;
-}
-
-.heroContent{
+  }
+  
+  .heroContent {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -36,73 +34,102 @@
     position: fixed;
     z-index: 1;
     gap: 25px;
-}
-
-.heroContent h1{
+  }
+  
+  .heroTitle {
     font-size: 3rem;
     text-align: center;
     margin: 0;
     padding: 0;
     z-index: 1;
-}
-
-.heroSubtitleContainer {
+    position: relative;
+    width: max-content;
+    font-family: 'Source Code Pro', monospace;
+    display: flex;
+    align-items: center;
+    white-space: pre;
+    flex-wrap: wrap;
+  }
+  
+  .caret {
+    font-size: 3rem;
+    animation: blink 1s step-end infinite;
+    font-family: 'Source Code Pro', monospace;
+    bottom: 100px
+  }
+  
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+  
+  .heroSubtitleContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-}
-
-.heroSubtitle{
+  }
+  
+  .heroSubtitle {
     font-size: 1rem;
     text-align: center;
     padding: 10px;
     z-index: 1;
-}
-
-.heroSubtitleContainer span {
+    color: white;
+    opacity: 0;
+    transform: translateY(3rem);
+    animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 2s) forwards;
+  }
+  
+  .heroSubtitleContainer span {
     font-family: 'akaDora', sans-serif;
-}
-
-.heroSocialsContainer {
+  }
+  
+  .heroSocialsContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px;
     z-index: 1;
+    opacity: 0;
+    transform: translateY(3rem);
+    animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 2.5s) forwards;
   }
-
-.heroSocialsContainer a {
+  
+  .heroSocialsContainer a {
     width: 24px;
     height: 24px;
     margin-left: 20px;
     margin-right: 20px;
-}
+  }
   
-.heroSocials {
+  .heroSocials {
     width: 24px;
     height: 24px;
-}
-
-.heroButton {
-    background-color: transparent; 
-    color: white; 
-    border: 2px solid white; 
-    border-radius: 20px; 
-    padding: 10px 20px; 
-    font-size: 1rem; 
-    cursor: pointer; 
+  }
+  
+  .heroButton {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
     font-family: 'elianto', sans-serif;
     margin-top: 50px;
-}
-
-.heroButton:hover {
-    background-color: black;  
-}
-
-
-.scrollButton {
+    opacity: 0;
+    transform: translateY(3rem);
+    animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 3s) forwards;
+  }
+  
+  .heroButton:hover {
+    background-color: black;
+  }
+  
+  .scrollButton {
     width: 30px;
     height: 60px;
     border: 2px solid white;
@@ -116,13 +143,13 @@
     transform: translateX(-50%);
     cursor: pointer;
     transition: background-color 0.3s ease;
-}
-
-.scrollButton:hover {
+  }
+  
+  .scrollButton:hover {
     background-color: black;
-}
-
-.scrollButton::before {
+  }
+  
+  .scrollButton::before {
     content: '';
     border: solid rgba(255, 255, 255, 0.5);
     border-width: 0 2px 2px 0;
@@ -130,17 +157,15 @@
     padding: 5px;
     transform: rotate(45deg);
     transition: transform 0.3s ease;
-}
-
-.scrollButton:hover::before {
+  }
+  
+  .scrollButton:hover::before {
     transform: rotate(45deg) scale(1.2);
     border: solid white;
     border-width: 0 2px 2px 0;
-}
-
-
-
-.blackScreen {
+  }
+  
+  .blackScreen {
     background-color: rgba(0, 0, 0, 0.6);
     position: absolute;
     top: 0;
@@ -148,4 +173,12 @@
     width: 100%;
     height: 100%;
     color: white;
-}
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

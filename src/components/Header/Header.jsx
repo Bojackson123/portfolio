@@ -1,13 +1,10 @@
-import { useState, useEffect} from 'react';
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 import styles from './Header.module.css';
 
-function Header() {
+function Header({ isScrolled }) {
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
-
-  useEffect(() => {
-    
-  }, []);
 
   const handleAnimationEnd = () => {
     setIsAnimating(false);
@@ -21,14 +18,14 @@ function Header() {
   };
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${isScrolled ? styles.blackBackground : ''}`}>
       <h1>
         <span className={styles.firstName}>
-          Rashid
+          Place
         </span> 
         <br/>
         <span className={styles.lastName}>
-          <span className={styles.noWrap}>Al-Marri</span>
+          <span className={styles.noWrap}>Holder</span>
         </span>
       </h1>
       <div className={styles.links}>
@@ -69,5 +66,9 @@ function Header() {
     </header>
   );
 }
+
+Header.propTypes = {
+  isScrolled: PropTypes.bool.isRequired,
+};
 
 export default Header;
