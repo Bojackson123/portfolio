@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     padding-top: 20px;
-    height: calc(100vh - 100px);
+    height: auto;
     width: 100%;
     background: black;
     z-index: 10;
