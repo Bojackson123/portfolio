@@ -38,28 +38,28 @@ function Header({ isScrolled }) {
         <div 
           className={`${styles.dropDownBars} ${dropdownVisible ? styles.active : ''}`}
           onClick={toggleDropdown}>
-          <span className={styles.bar}></span>
-          <span className={styles.bar}></span>
-          <span className={styles.bar}></span>
+          <span className={`${styles.bar} ${isScrolled ? styles.blackBackground : ''}`}></span>
+          <span className={`${styles.bar} ${isScrolled ? styles.blackBackground : ''}`}></span>
+          <span className={`${styles.bar} ${isScrolled ? styles.blackBackground : ''}`}></span>
         </div>
       </div>
       <div
-          className={`${styles.dropDownContent} ${styles.firstContent} ${dropdownVisible ? styles.active : (isAnimating ? styles.inactive : '')}`}
+          className={`${styles.dropDownContent} ${styles.firstContent} ${dropdownVisible ? styles.active : (isAnimating ? styles.inactive : '')} ${isScrolled ? styles.blackBackground : ''}`}
           onAnimationEnd={handleAnimationEnd}>
           <a href="#">Home</a>
         </div>
         <div
-          className={`${styles.dropDownContent} ${styles.secondContent} ${dropdownVisible ? styles.active : (isAnimating ? styles.inactive : '')}`}
+          className={`${styles.dropDownContent} ${styles.secondContent} ${dropdownVisible ? styles.active : (isAnimating ? styles.inactive : '')} ${isScrolled ? styles.blackBackground : ''}`}
           onAnimationEnd={handleAnimationEnd}>
           <a href="#">About</a>
         </div>
         <div
-          className={`${styles.dropDownContent} ${styles.thirdContent} ${dropdownVisible ? styles.active : (isAnimating ? styles.inactive : '')}`}
+          className={`${styles.dropDownContent} ${styles.thirdContent} ${dropdownVisible ? styles.active : (isAnimating ? styles.inactive : '')} ${isScrolled ? styles.blackBackground : ''}`}
           onAnimationEnd={handleAnimationEnd}>
           <a href="#">Projects</a>
         </div>
         <div
-          className={`${styles.dropDownContent} ${styles.fourthContent} ${dropdownVisible ? styles.active : (isAnimating ? styles.inactive : '')}`}
+          className={`${styles.dropDownContent} ${styles.fourthContent} ${dropdownVisible ? styles.active : (isAnimating ? styles.inactive : '')} ${isScrolled ? styles.blackBackground : ''}`}
           onAnimationEnd={handleAnimationEnd}>
           <a href="#">Contact Me</a>
         </div>

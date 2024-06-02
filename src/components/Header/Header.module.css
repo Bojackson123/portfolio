@@ -54,28 +54,39 @@
     overflow: hidden;
     z-index: 100;
     position: fixed;
+    transition: background 0.5s ease-in-out;
 }
 
 .header.blackBackground {
-    background: black;
+    background: #f2f2f2;
+    transition: color 0.5s ease-in-out, background 0.5s ease-in-out;
   }
+
+.header.blackBackground h1, .header.blackBackground a {
+    color: #000;
+    background-color: transparent;
+}
+
+.bar.blackBackground {
+    background: #000;
+}
+
+.dropDownContent.blackBackground {
+    background: #f2f2f2;
+}
+
 
 .header h1 {
     font-size: 2.5rem;
     margin: 0;
     padding-left: 50px;
     line-height: .8;
-    background: white;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
     z-index: 10;
 }
 
 .header p {
     margin: 0;
     text-align: center;
-    color: #eee;
     z-index: 10;
 }
 
@@ -223,9 +234,6 @@
     transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
 }
 
-.dropDownContent a:hover {
-    color: #fff;
-}
 
 .dropDownContent a:hover::after {
     width: 100%;

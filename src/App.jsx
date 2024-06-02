@@ -3,6 +3,7 @@ import Hero from './components/Hero/Hero';
 import Footer from './components/Footer/Footer';
 import About from './components/About/About';
 import Test from './components/Test/Test';
+import Projects from './components/Projects/Projects';
 import './App.css';
 
 function App() {
@@ -37,7 +38,7 @@ function App() {
     <>
       <Hero scrollToAbout={scrollToAbout} isScrolled={isScrolled} />
       <About ref={aboutRef} isScrolled={isScrolledAbout} />
-      <Test />
+      <Projects />
       <Footer />
     </>
   );

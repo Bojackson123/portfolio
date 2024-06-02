@@ -38,7 +38,7 @@ const About = forwardRef(({ isScrolled }, ref) => {
   
   return (
     <div className={styles.about} ref={ref}>
-      <div>
+      <div className={styles.border}>
         <div className={styles.header}>
           <div className={styles.headerBox}>
             <span className={styles.ciaTitle} data-value="CENTRAL INTELLIGENCE AGENCY">CENTRAL INTELLIGENCE AGENCY</span>
