@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from 'react';
 import Hero from './components/Hero/Hero';
 import Footer from './components/Footer/Footer';
 import About from './components/About/About';
-import Test from './components/Test/Test';
 import Projects from './components/Projects/Projects';
 import './App.css';
 

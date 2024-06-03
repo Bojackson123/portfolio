@@ -19,7 +19,8 @@
     grid-template-columns: 1fr 2fr;
     grid-template-areas: 
         "image info";
-    gap: 40px; 
+    gap: 40px;
+    justify-self: center; 
      
     
 }
@@ -29,7 +30,7 @@
     grid-template-columns: 2fr 1fr;
     grid-template-areas: 
         "info image";
-    gap: 20px; 
+    gap: 40px; 
     
 }
 
@@ -44,10 +45,14 @@
     width: 100%;
     max-width: 500px;
     min-width: 300px;
-    height: auto; /* Ensure the image scales properly */
-    object-fit: cover; /* Ensures the image covers the container without distortion */
+    height: auto; 
+    object-fit: cover; 
     object-position: center;
-    
+    transition: transform 0.3s ease-in-out;
+}
+
+.projectImage:hover {
+    transform: scale(1.1);
 }
 
 .projectInfo {
@@ -81,4 +86,26 @@
 .arrowContainerRight {
     display: flex;
     justify-content: start;
+}
+
+@media screen and (max-width: 1000px) {
+    .imageLeft, .imageRight {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "image"
+            "info";
+    
+    }
+    
+    .projectImage {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .arrowContainerRight, .arrowContainerLeft {
+        display: flex;
+        justify-content: end;
+        padding-top: 10px;
+    }
+    
 }
