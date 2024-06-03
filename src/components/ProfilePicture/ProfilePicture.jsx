@@ -3,6 +3,7 @@ import profilePic from '../../assets/pictures/profilePicture.webp';
 import profilePic2 from '../../assets/pictures/profilePicture2.webp';
 import profilePic3 from '../../assets/pictures/profilePicture3.webp';
 import randomizeText from '../../utils/randomizeText';
+import randomizeTextFast from '../../utils/randomizeTextFast';
 import { useState, useEffect } from 'react';
 
 
@@ -37,10 +38,15 @@ function ProfilePicture() {
     
         if ( !isSmallViewport) {
           
-          const elements = document.querySelectorAll(`[data-value]`);
-          elements.forEach(element => {
-            randomizeText(element);
-          });
+            const elements = document.querySelectorAll(`[data-value]`);
+            elements.forEach(element => {
+                randomizeText(element);
+            });
+
+            const elementsFast = document.querySelectorAll(`[data-fast]`);
+            elementsFast.forEach(element => {
+                randomizeTextFast(element);
+            });
         }
       }, []);
     return (

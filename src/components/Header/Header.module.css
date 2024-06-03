@@ -57,6 +57,11 @@
     transition: background 0.5s ease-in-out;
 }
 
+.header.active {
+    background: #000;
+    transition: background 0.5s ease-in-out;
+}
+
 header a {
     cursor: pointer;
 }
@@ -78,6 +83,8 @@ header a {
 .dropDownContent.blackBackground {
     background: #f2f2f2;
 }
+
+
 
 
 .header h1 {
@@ -147,9 +154,11 @@ header a {
     bottom: 5px;
     height: 2px;
     width: 0;
-    background: linear-gradient(to right,#eee, #ce4f20, #eee);
+    background: linear-gradient(to right, transparent, #ce4f20, transparent);
     transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
 }
+
+
 
 .links a:hover::after {
     width: 100%;
@@ -218,6 +227,7 @@ header a {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
     transform: translateX(-100%);
+    transition: background 0.5s ease-in-out;
 }
 
 .dropDownContent a {
@@ -234,9 +244,10 @@ header a {
     bottom: 5px;
     height: 2px;
     width: 0;
-    background: linear-gradient(to right,#eee, #ce4f20, #eee);
+    background: linear-gradient(to right,transparent, #ce4f20, transparent);
     transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
 }
+
 
 
 .dropDownContent a:hover::after {

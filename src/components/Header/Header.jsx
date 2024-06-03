@@ -18,7 +18,11 @@ function Header({ isScrolled, scrollToHero, scrollToProjects, scrollToContact, s
   };
 
   return (
-    <header className={`${styles.header} ${isScrolled ? styles.blackBackground : ''}`}>
+    <header 
+      className={`${styles.header} 
+                ${isScrolled ? styles.blackBackground : ''}
+                ${dropdownVisible ? styles.active : ''}`}
+    >
       <h1>
         <span className={styles.firstName}>
           Rashid
@@ -44,8 +48,11 @@ function Header({ isScrolled, scrollToHero, scrollToProjects, scrollToContact, s
         </div>
       </div>
       <div
-          className={`${styles.dropDownContent} ${styles.firstContent} ${dropdownVisible ? styles.active : (isAnimating ? styles.inactive : '')} ${isScrolled ? styles.blackBackground : ''}`}
-          onAnimationEnd={handleAnimationEnd}>
+          className={`${styles.dropDownContent} ${styles.firstContent} 
+                      ${dropdownVisible ? styles.active : (isAnimating ? styles.inactive : '')} 
+                      ${isScrolled ? styles.blackBackground : ''}`}
+          onAnimationEnd={handleAnimationEnd}
+       >
           <a onClick={scrollToHero}>Home</a>
         </div>
         <div
