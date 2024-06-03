@@ -3,6 +3,7 @@ import Hero from './components/Hero/Hero';
 import Footer from './components/Footer/Footer';
 import About from './components/About/About';
 import Projects from './components/Projects/Projects';
+import Contact from './components/Contact/Contact';
 import './App.css';
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
   const aboutRef = useRef(null);
 
   const scrollToAbout = () => {
-    const headerHeight = document.querySelector('header').offsetHeight; // Adjust this selector to match your header element
+    const headerHeight = document.querySelector('header').offsetHeight;
     const aboutPosition = aboutRef.current.getBoundingClientRect().top + window.scrollY - headerHeight;
     window.scrollTo({ top: aboutPosition, behavior: 'smooth' });
     setIsScrolledAbout(true); 
@@ -38,6 +39,7 @@ function App() {
       <Hero scrollToAbout={scrollToAbout} isScrolled={isScrolled} />
       <About ref={aboutRef} isScrolled={isScrolledAbout} />
       <Projects />
+      <Contact />
       <Footer />
     </>
   );
