@@ -2,7 +2,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Header.module.css';
 
-function Header({ isScrolled }) {
+function Header({ isScrolled, scrollToHero, scrollToProjects, scrollToContact, scrollToAbout}) {
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -29,10 +29,10 @@ function Header({ isScrolled }) {
         </span>
       </h1>
       <div className={styles.links}>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Projects</a>
-        <a href="#">Contact Me</a>
+        <a onClick={scrollToHero}>Home</a>
+        <a onClick={scrollToAbout}>About</a>
+        <a onClick={scrollToProjects}>Projects</a>
+        <a onClick={scrollToContact}>Contact Me</a>
       </div>
       <div className={styles.dropDown}>
         <div 
@@ -46,22 +46,22 @@ function Header({ isScrolled }) {
       <div
           className={`${styles.dropDownContent} ${styles.firstContent} ${dropdownVisible ? styles.active : (isAnimating ? styles.inactive : '')} ${isScrolled ? styles.blackBackground : ''}`}
           onAnimationEnd={handleAnimationEnd}>
-          <a href="#">Home</a>
+          <a onClick={scrollToHero}>Home</a>
         </div>
         <div
           className={`${styles.dropDownContent} ${styles.secondContent} ${dropdownVisible ? styles.active : (isAnimating ? styles.inactive : '')} ${isScrolled ? styles.blackBackground : ''}`}
           onAnimationEnd={handleAnimationEnd}>
-          <a href="#">About</a>
+          <a onClick={scrollToAbout}>About</a>
         </div>
         <div
           className={`${styles.dropDownContent} ${styles.thirdContent} ${dropdownVisible ? styles.active : (isAnimating ? styles.inactive : '')} ${isScrolled ? styles.blackBackground : ''}`}
           onAnimationEnd={handleAnimationEnd}>
-          <a href="#">Projects</a>
+          <a onClick={scrollToProjects}>Projects</a>
         </div>
         <div
           className={`${styles.dropDownContent} ${styles.fourthContent} ${dropdownVisible ? styles.active : (isAnimating ? styles.inactive : '')} ${isScrolled ? styles.blackBackground : ''}`}
           onAnimationEnd={handleAnimationEnd}>
-          <a href="#">Contact Me</a>
+          <a onClick={scrollToContact}>Contact Me</a>
         </div>
     </header>
   );
@@ -69,6 +69,10 @@ function Header({ isScrolled }) {
 
 Header.propTypes = {
   isScrolled: PropTypes.bool.isRequired,
+  scrollToHero: PropTypes.func.isRequired,
+  scrollToProjects: PropTypes.func.isRequired,
+  scrollToContact: PropTypes.func.isRequired,
+  scrollToAbout: PropTypes.func.isRequired,
 };
 
 export default Header;

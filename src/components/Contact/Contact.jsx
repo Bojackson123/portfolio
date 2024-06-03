@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState, forwardRef } from 'react';
 import styles from './Contact.module.css';
 
-function Contact() {
+const Contact = forwardRef((props, ref) =>{
     const [formData, setFormData] = useState({
         name: '',
         phone: '',
@@ -34,7 +34,7 @@ function Contact() {
     };
 
     return (
-        <div className={styles.contactContainer}>
+        <div className={styles.contactContainer} ref={ref}>
             <form className={styles.contact} onSubmit={handleSubmit}>
                 <div className={styles.header}>
                     <h1>Contact Me</h1>
@@ -79,6 +79,8 @@ function Contact() {
             </form>
         </div>
     );
-}
+});
+
+Contact.displayName = 'Contact';
 
 export default Contact;

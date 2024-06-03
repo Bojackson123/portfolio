@@ -5,6 +5,7 @@ import jammmingImage from '../../assets/projectPhotos/jammming.png';
 import ravenousImage from '../../assets/projectPhotos/ravenous.jpg';
 import timeFliesReport from '../../assets/projectPhotos/timeFliesReport.pdf';
 import arrow from '../../assets/icons/arrow-right-top.svg'
+import { forwardRef } from 'react';
 
 const projects = [
     {
@@ -35,12 +36,12 @@ const projects = [
     
 ];
 
-function Projects() {
+const Projects = forwardRef((props, ref) => {
 
     
 
     return (
-        <div className={styles.projectsContainer}>
+        <div className={styles.projectsContainer} ref={ref}>
             <h1>My Projects</h1>
           {projects.map((project, index) => (
             <div key={index} className={`${index % 2 === 0 ? styles.imageLeft : styles.imageRight}`}>
@@ -72,7 +73,8 @@ function Projects() {
           ))}
         </div>
       );
-}
+});
 
+Projects.displayName = 'Projects';
 
 export default Projects;

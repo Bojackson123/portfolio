@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { forwardRef, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Hero.module.css';
 import Header from '../Header/Header';
@@ -9,7 +9,7 @@ import twitter from '../../assets/socialIcons/twitterx.png';
 import instagram from '../../assets/socialIcons/instagram.png';
 import whatsapp from '../../assets/socialIcons/whatsapp.png';
 
-function Hero({ scrollToAbout, isScrolled }) {
+const Hero = forwardRef(({ scrollToAbout, isScrolled, scrollToHero, scrollToProjects, scrollToContact }, ref) => {
   const heroTitleRef = useRef(null);
   const caretRef = useRef(null);
 
@@ -35,8 +35,15 @@ function Hero({ scrollToAbout, isScrolled }) {
   }, []);
 
   return (
-    <div className={styles.hero}>
-      <Header className={styles.header} isScrolled={isScrolled} />
+    <div className={styles.hero} ref={ref}>
+      <Header 
+        className={styles.header} 
+        isScrolled={isScrolled}
+        scrollToHero={scrollToHero}
+        scrollToProjects={scrollToProjects}
+        scrollToContact={scrollToContact}
+        scrollToAbout={scrollToAbout} 
+      />
       <img className={styles.heroImage} src={heroImage} alt="Hero Image" />
       <div className={styles.blackScreen}></div>
       <div className={styles.heroContent}>
@@ -65,10 +72,15 @@ function Hero({ scrollToAbout, isScrolled }) {
       </div>
     </div>
   );
-}
+});
+
+Hero.displayName = 'Hero';
 
 Hero.propTypes = {
   scrollToAbout: PropTypes.func.isRequired,
+  scrollToHero: PropTypes.func.isRequired,
+  scrollToProjects: PropTypes.func.isRequired,
+  scrollToContact: PropTypes.func.isRequired,
   isScrolled: PropTypes.bool.isRequired,
 };
 
