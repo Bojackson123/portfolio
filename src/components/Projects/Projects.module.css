@@ -9,7 +9,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 40px; /* Add spacing between projects */
+    gap: 60px;
+    box-sizing: border-box;
 }
 
 
@@ -18,8 +19,9 @@
     grid-template-columns: 1fr 2fr;
     grid-template-areas: 
         "image info";
-    gap: 20px; /* Add spacing between image and info */
-    align-items: center; /* Center align items */
+    gap: 40px; 
+     
+    
 }
 
 .imageRight {
@@ -27,19 +29,56 @@
     grid-template-columns: 2fr 1fr;
     grid-template-areas: 
         "info image";
-    gap: 20px; /* Add spacing between info and image */
-    align-items: center; /* Center align items */
+    gap: 20px; 
+    
+}
+
+.imageLeft, .imageRight {
+    max-width: 1500px;
+    padding: 20px;
 }
 
 .projectImage {
-    grid-area: image; /* Remove quotes */
     border-radius: 10px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-    width: 100%; /* Ensure the image takes full width */
-    max-width: 400px; /* Optional: limit the maximum width */
+    width: 100%;
+    max-width: 500px;
+    min-width: 300px;
+    height: auto; /* Ensure the image scales properly */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+    object-position: center;
+    
 }
 
 .projectInfo {
-    grid-area: info; /* Remove quotes */
-    text-align: left; /* Align text to the left */
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+.projectInfo p {
+    padding-top: 10px;
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+.arrow {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.arrow:hover {
+    transform: scale(1.2);
+}
+
+.arrowContainerLeft {
+    display: flex;
+    justify-content: end;
+}
+
+.arrowContainerRight {
+    display: flex;
+    justify-content: start;
 }
