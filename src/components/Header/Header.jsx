@@ -23,15 +23,17 @@ function Header({ isScrolled, scrollToHero, scrollToProjects, scrollToContact, s
                 ${isScrolled ? styles.blackBackground : ''}
                 ${dropdownVisible ? styles.active : ''}`}
     >
-      <h1>
-        <span className={styles.firstName}>
-          Rashid
-        </span> 
-        <br/>
-        <span className={styles.lastName}>
-          <span className={styles.noWrap}>Al-Marri</span>
-        </span>
-      </h1>
+        <h1>
+        <a onClick={scrollToHero}>
+          <span className={styles.firstName}>
+            Rashid
+          </span> 
+          <br/>
+          <span className={styles.lastName}>
+            <span className={styles.noWrap}>Al-Marri</span>
+          </span>
+          </a>
+        </h1>
       <div className={styles.links}>
         <a onClick={scrollToHero}>Home</a>
         <a onClick={scrollToAbout}>About</a>
