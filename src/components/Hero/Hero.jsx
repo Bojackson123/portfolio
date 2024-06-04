@@ -2,7 +2,7 @@ import { forwardRef, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Hero.module.css';
 import Header from '../Header/Header';
-import heroImage from '../../assets/heroPhotos/hero3.jpg';
+import heroImage from '../../assets/heroPhotos/hero3.webp';
 import github from '../../assets/socialIcons/github.png';
 import linkedin from '../../assets/socialIcons/linkedin.png';
 import twitter from '../../assets/socialIcons/twitterx.png';
