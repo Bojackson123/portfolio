@@ -8,6 +8,7 @@ import linkedin from '../../assets/socialIcons/linkedin.png';
 import twitter from '../../assets/socialIcons/twitterx.png';
 import instagram from '../../assets/socialIcons/instagram.png';
 import whatsapp from '../../assets/socialIcons/whatsapp.png';
+import CV from '../../assets/Rashid Al-Marri CV.pdf';
 
 const Hero = forwardRef(({ scrollToAbout, isScrolled, scrollToHero, scrollToProjects, scrollToContact }, ref) => {
   const heroTitleRef = useRef(null);
@@ -33,6 +34,14 @@ const Hero = forwardRef(({ scrollToAbout, isScrolled, scrollToHero, scrollToProj
 
     typeWriter();
   }, []);
+
+  const handleCVClick = (e) => {
+    e.preventDefault();
+    const link = document.createElement('a');
+    link.href = CV;
+    link.target = '_blank';
+    link.click();
+  };
 
   return (
     <div className={styles.hero} ref={ref}>
@@ -67,7 +76,7 @@ const Hero = forwardRef(({ scrollToAbout, isScrolled, scrollToHero, scrollToProj
           <a href='' target="_blank" rel="noopener noreferrer"><img className={styles.heroSocials} src={instagram} alt="Instagram" /></a>
           <a href='https://api.whatsapp.com/send/?phone=%2B4407562407672&text&type=phone_number&app_absent=0' target="_blank" rel="noopener noreferrer"><img className={styles.heroSocials} src={whatsapp} alt="Whatsapp" /></a>
         </div>
-        <button className={styles.heroButton}>Download CV</button>
+        <button onClick={handleCVClick} className={styles.heroButton}>Download CV</button>
         <div className={styles.scrollButton} onClick={scrollToAbout}></div>
       </div>
     </div>
