@@ -12,7 +12,7 @@ const bioText = {
   bio2: " He is a highly motivated individual with a passion for web development and software engineering.",
   bio3: " He also has a keen interest in AI technologies and has experience working with and fine-tuning machine learning models.",
   bio4: " He is proficient in Python and JavaScript and is well versed in many of the popular libraries and frameworks such as React, Node.js, PyTorch, Django, and Flask.",
-  bio5: " He is currently residing in Doha, Qatar and is seeking opportunities in the fields of web development, software engineering, and machine learning."
+  bio5: " He is currently residing in Brighton, UK and is seeking opportunities in the fields of web development, software engineering, and machine learning."
 };
 
 const About = forwardRef(({ isScrolled }, ref) => {
@@ -77,7 +77,7 @@ const About = forwardRef(({ isScrolled }, ref) => {
             <span className={styles.infoValue}><span className={styles.redacted} data-value="REDACTED    1">REDACTED    1</span></span>
 
             <span className={styles.infoLabel} data-value="CURRENT RESIDENCE:">CURRENT RESIDENCE:</span>
-            <span className={styles.infoValue} data-value="DOHA, QATAR">DOHA, QATAR</span>   
+            <span className={styles.infoValue} data-value="BRIGHTON, UK">BRIGHTON, UK</span>   
           </div>
         </div>
         <div className={styles.containerTwo}>
