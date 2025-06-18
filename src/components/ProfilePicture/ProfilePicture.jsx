@@ -90,7 +90,7 @@ function ProfilePicture() {
         </div>
         <div className={styles.infoRow}>
           <span data-value="Status:">Status:</span>
-          <span data-value="Unemployed">Unemployed</span>
+          <span data-value="Employed">Unemployed</span>
         </div>
       </div>
     </div>
