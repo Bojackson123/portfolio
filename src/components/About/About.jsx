@@ -77,7 +77,7 @@ const About = forwardRef(({ isScrolled }, ref) => {
             <span className={styles.infoValue}><span className={styles.redacted} data-value="REDACTED    1">REDACTED    1</span></span>
 
             <span className={styles.infoLabel} data-value="CURRENT RESIDENCE:">CURRENT RESIDENCE:</span>
-            <span className={styles.infoValue} data-value="DOHA, QATAR">BRIGHTON, UK</span>   
+            <span className={styles.infoValue} data-value="DOHA, QATAR">DOHA, QATAR</span>   
           </div>
         </div>
         <div className={styles.containerTwo}>
