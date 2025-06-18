@@ -4,11 +4,13 @@ import Footer from './components/Footer/Footer';
 import About from './components/About/About';
 import Projects from './components/Projects/Projects';
 import Contact from './components/Contact/Contact';
+import Loader from './components/Loader/Loader'; 
 import './App.css';
 
 function App() {
   const [isScrolledAbout, setIsScrolledAbout] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
   const heroRef = useRef(null);
   const aboutRef = useRef(null);
   const projectsRef = useRef(null);
@@ -56,18 +58,26 @@ function App() {
     };
   }, []);
 
-  return (
+    return (
     <>
-      <Hero 
-        scrollToAbout={scrollToAbout} isScrolled={isScrolled} 
-        scrollToHero={scrollToHero} ref={heroRef}
-        scrollToProjects={scrollToProjects}
-        scrollToContact={scrollToContact}
-      />
-      <About ref={aboutRef} isScrolled={isScrolledAbout} />
-      <Projects ref={projectsRef}/>
-      <Contact ref={contactRef}/>
-      <Footer />
+      {isLoading && <Loader />}               {/* overlay while hero loads */}
+
+      <main className={isLoading ? "hidden" : "fade‑in"}>
+        <Hero
+          onLoaded={() => setIsLoading(false)}  /* <-- gets called in Hero */
+          scrollToAbout={scrollToAbout}
+          scrollToHero={scrollToHero}
+          scrollToProjects={scrollToProjects}
+          scrollToContact={scrollToContact}
+          isScrolled={isScrolled}
+          ref={heroRef}
+        />
+
+        <About    ref={aboutRef}    isScrolled={isScrolledAbout} />
+        <Projects ref={projectsRef} />
+        <Contact  ref={contactRef}  />
+        <Footer />
+      </main>
     </>
   );
 }

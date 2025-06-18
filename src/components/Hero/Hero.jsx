@@ -1,6 +1,7 @@
 import { forwardRef, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Hero.module.css';
+
 import Header from '../Header/Header';
 import heroImage from '../../assets/heroPhotos/hero3.webp';
 import github from '../../assets/socialIcons/github.png';
@@ -10,7 +11,14 @@ import instagram from '../../assets/socialIcons/instagram.png';
 import whatsapp from '../../assets/socialIcons/whatsapp.png';
 import CV from '../../assets/Rashid Al-Marri CV.pdf';
 
-const Hero = forwardRef(({ scrollToAbout, isScrolled, scrollToHero, scrollToProjects, scrollToContact }, ref) => {
+const Hero = forwardRef(({
+  scrollToAbout,
+  scrollToHero,
+  scrollToProjects,
+  scrollToContact,
+  isScrolled,
+  onLoaded // ✅ added prop for loader
+}, ref) => {
   const heroTitleRef = useRef(null);
   const caretRef = useRef(null);
 
@@ -45,21 +53,29 @@ const Hero = forwardRef(({ scrollToAbout, isScrolled, scrollToHero, scrollToProj
 
   return (
     <div className={styles.hero} ref={ref}>
-      <Header 
-        className={styles.header} 
+      <Header
+        className={styles.header}
         isScrolled={isScrolled}
         scrollToHero={scrollToHero}
         scrollToProjects={scrollToProjects}
         scrollToContact={scrollToContact}
-        scrollToAbout={scrollToAbout} 
+        scrollToAbout={scrollToAbout}
       />
-      <img className={styles.heroImage} src={heroImage} alt="Hero Image" />
+      {/* ✅ fire onLoaded when background is ready */}
+      <img
+        className={styles.heroImage}
+        src={heroImage}
+        alt="Hero background"
+        onLoad={onLoaded}
+      />
       <div className={styles.blackScreen}></div>
+
       <div className={styles.heroContent}>
         <h1 className={styles.heroTitle}>
           <span ref={heroTitleRef}></span>
           <span ref={caretRef} className={styles.caret}>|</span>
         </h1>
+
         <div className={styles.heroSubtitleContainer}>
           <p className={styles.heroSubtitle}>Web Developer</p>
           <span className={styles.heroSubtitle}>|</span>
@@ -69,13 +85,25 @@ const Hero = forwardRef(({ scrollToAbout, isScrolled, scrollToHero, scrollToProj
           <span className={styles.heroSubtitle}>|</span>
           <p className={styles.heroSubtitle}>AI Enthusiast</p>
         </div>
+
         <div className={styles.heroSocialsContainer}>
-          <a href='https://github.com/Bojackson123' target="_blank" rel="noopener noreferrer"><img className={styles.heroSocials} src={github} alt="Github" /></a>
-          <a href='https://www.linkedin.com/in/rashid-al-marri-8b385027a/' target="_blank" rel="noopener noreferrer"><img className={styles.heroSocials} src={linkedin} alt="Linkedin" /></a>
-          <a href='https://x.com/RashiidAlmarrii' target="_blank" rel="noopener noreferrer"><img className={styles.heroSocials} src={twitter} alt="Twitter" /></a>
-          <a href='' target="_blank" rel="noopener noreferrer"><img className={styles.heroSocials} src={instagram} alt="Instagram" /></a>
-          <a href='https://api.whatsapp.com/send/?phone=%2B4407562407672&text&type=phone_number&app_absent=0' target="_blank" rel="noopener noreferrer"><img className={styles.heroSocials} src={whatsapp} alt="Whatsapp" /></a>
+          <a href='https://github.com/Bojackson123' target="_blank" rel="noopener noreferrer">
+            <img className={styles.heroSocials} src={github} alt="Github" />
+          </a>
+          <a href='https://www.linkedin.com/in/rashid-al-marri-8b385027a/' target="_blank" rel="noopener noreferrer">
+            <img className={styles.heroSocials} src={linkedin} alt="LinkedIn" />
+          </a>
+          <a href='https://x.com/RashiidAlmarrii' target="_blank" rel="noopener noreferrer">
+            <img className={styles.heroSocials} src={twitter} alt="Twitter" />
+          </a>
+          <a href='' target="_blank" rel="noopener noreferrer">
+            <img className={styles.heroSocials} src={instagram} alt="Instagram" />
+          </a>
+          <a href='https://api.whatsapp.com/send/?phone=%2B4407562407672&text&type=phone_number&app_absent=0' target="_blank" rel="noopener noreferrer">
+            <img className={styles.heroSocials} src={whatsapp} alt="WhatsApp" />
+          </a>
         </div>
+
         <button onClick={handleCVClick} className={styles.heroButton}>Download CV</button>
         <div className={styles.scrollButton} onClick={scrollToAbout}></div>
       </div>
@@ -91,6 +119,7 @@ Hero.propTypes = {
   scrollToProjects: PropTypes.func.isRequired,
   scrollToContact: PropTypes.func.isRequired,
   isScrolled: PropTypes.bool.isRequired,
+  onLoaded: PropTypes.func.isRequired, // ✅ added this
 };
 
 export default Hero;
