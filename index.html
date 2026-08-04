@@ -7,7 +7,7 @@
     <title>Rashid Al-Marri — Full-stack engineer & AI solutions analyst</title>
     <meta
       name="description"
-      content="Full-stack engineer and AI solutions analyst in Huntsville, Alabama. I build secure enterprise systems and the AI workflows that run them — in C#, .NET, React, TypeScript and Python."
+      content="Full-stack engineer and AI solutions analyst in Daphne, Alabama, working remotely across the US. I build secure enterprise systems and the AI workflows that run them — in C#, .NET, React, TypeScript and Python."
     />
     <link rel="canonical" href="https://rashidalmarri.dev/" />
     <meta name="author" content="Rashid Al-Marri" />
@@ -16,6 +16,18 @@
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    <!-- The page is prerendered, so its content is in the HTML. Scroll reveals
+         start at opacity 0 and are turned on by JS, so without JS we skip
+         straight to the revealed state rather than showing a blank page. -->
+    <noscript>
+      <style>
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      </style>
+    </noscript>
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Rashid Al-Marri" />
@@ -26,7 +38,7 @@
     />
     <meta
       property="og:description"
-      content="I build secure enterprise systems and the AI workflows that run them. Multi-tenant Azure IoT, agentic Workspace tooling, and $2M platforms delivered into regulated environments."
+      content="I build secure enterprise systems and the AI workflows that run them. Multi-tenant Azure IoT, agentic Workspace tooling, and enterprise platforms delivered into regulated environments."
     />
     <meta property="og:image" content="https://rashidalmarri.dev/og-image.png" />
     <meta property="og:image:width" content="1200" />
@@ -53,19 +65,26 @@
         "@type": "Person",
         "name": "Rashid Al-Marri",
         "url": "https://rashidalmarri.dev/",
-        "jobTitle": "AI Solutions Analyst",
+        "jobTitle": "Software Engineer / AI Solutions Analyst",
         "worksFor": { "@type": "Organization", "name": "Sanmina" },
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Huntsville",
+          "addressLocality": "Daphne",
           "addressRegion": "AL",
           "addressCountry": "US"
         },
+        "workLocation": { "@type": "Place", "name": "Remote (US)" },
         "email": "mailto:rashidalmarri.dev@gmail.com",
-        "alumniOf": {
-          "@type": "CollegeOrUniversity",
-          "name": "University of Sussex"
-        },
+        "alumniOf": [
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "University of Sussex"
+          },
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "University of Illinois Urbana-Champaign"
+          }
+        ],
         "knowsAbout": [
           "C#",
           ".NET",

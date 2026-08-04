@@ -33,20 +33,6 @@ function placeholder(w, h, label, hint) {
 
 const placeholders = [
   {
-    out: `${ROOT}/work/sentinel-dashboard.webp`,
-    w: 1600,
-    h: 1000,
-    label: 'SCREENSHOT PENDING',
-    hint: 'Drop the Sentinel dashboard here',
-  },
-  {
-    out: `${ROOT}/work/workflow-engine-chat.webp`,
-    w: 1200,
-    h: 900,
-    label: 'SCREENSHOT PENDING',
-    hint: 'Drop a Google Chat thread here',
-  },
-  {
     out: `${ROOT}/recognition/oryxmed-1.webp`,
     w: 1200,
     h: 800,
@@ -90,7 +76,7 @@ const og = Buffer.from(`
     <text x="80" y="456" font-family="${SANS}" font-size="66" font-weight="700" fill="${MUTE}" letter-spacing="-1.5">that run them.</text>
 
     <line x1="80" y1="516" x2="1120" y2="516" stroke="${RULE}" stroke-width="1"/>
-    <text x="80" y="562" font-family="${MONO}" font-size="21" fill="${BRASS}" letter-spacing="3">SANMINA · AI SOLUTIONS ANALYST · HUNTSVILLE, AL</text>
+    <text x="80" y="562" font-family="${MONO}" font-size="21" fill="${BRASS}" letter-spacing="3">SANMINA · SOFTWARE ENGINEER · DAPHNE, AL · REMOTE (US)</text>
   </svg>
 `)
 

@@ -1,26 +1,42 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
 
-const prefersReducedMotion = () =>
-  window.matchMedia('(prefers-reduced-motion: reduce)').matches
+const QUERY = '(prefers-reduced-motion: reduce)'
+
+/* Created once, on first use, so the module stays importable on the server. */
+let query: MediaQueryList | null = null
+const media = () => (query ??= window.matchMedia(QUERY))
+
+const subscribe = (onChange: () => void) => {
+  const mq = media()
+  mq.addEventListener('change', onChange)
+  return () => mq.removeEventListener('change', onChange)
+}
+
+const getSnapshot = () => media().matches
+
+/* The prerender has no window. Reporting "motion is fine" there matches what
+   the browser assumes on its first hydration pass, so the markup lines up. */
+const getServerSnapshot = () => false
 
 /**
  * Reveals an element once it scrolls into view, then stops observing.
- * Starts already revealed when the user prefers reduced motion, so nothing
- * on the page depends on an animation that will never run.
+ * Reveals immediately when the user prefers reduced motion, so nothing on the
+ * page depends on an animation that will never run.
  */
 export function useReveal<T extends HTMLElement>() {
   const ref = useRef<T>(null)
-  const [visible, setVisible] = useState(prefersReducedMotion)
+  const reduced = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
+  const [seen, setSeen] = useState(false)
 
   useEffect(() => {
     const el = ref.current
-    if (!el || visible) return
+    if (!el || seen || reduced) return
 
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            setVisible(true)
+            setSeen(true)
             observer.disconnect()
           }
         }
@@ -30,7 +46,7 @@ export function useReveal<T extends HTMLElement>() {
 
     observer.observe(el)
     return () => observer.disconnect()
-  }, [visible])
+  }, [seen, reduced])
 
-  return { ref, visible }
+  return { ref, visible: reduced || seen }
 }
