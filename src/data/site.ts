@@ -1,10 +1,10 @@
 export const site = {
   name: 'Rashid Al-Marri',
   initials: 'RA',
-  role: 'AI Solutions Analyst',
+  role: 'Software Engineer / AI Solutions Analyst',
   company: 'Sanmina',
-  location: 'Huntsville, Alabama',
-  status: 'US citizen · open to relocation',
+  location: 'Daphne, AL · Remote (US)',
+  status: 'Authorized to work in the U.S. without sponsorship',
   email: 'rashidalmarri.dev@gmail.com',
   cvPath: '/rashid-al-marri-cv.pdf',
   url: 'https://rashidalmarri.dev',

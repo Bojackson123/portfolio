@@ -11,9 +11,9 @@ export function Hero() {
         </h1>
 
         <p className="mt-8 max-w-xl text-[1.0625rem] leading-relaxed text-mute">
-          Full-stack engineer and AI solutions analyst. I&rsquo;ve delivered $2M platforms
-          into regulated environments, and I build the kind of systems that keep working
-          when nobody is watching them.
+          Full-stack engineer and AI solutions analyst. I&rsquo;ve delivered enterprise
+          platforms into regulated environments, and I build the kind of systems that keep
+          working when nobody is watching them.
         </p>
 
         <div className="hairline mt-10 mb-5" />

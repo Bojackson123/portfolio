@@ -21,14 +21,15 @@ export function About() {
         <Reveal delay={80}>
           <div className="flex max-w-2xl flex-col gap-5 text-[1.0625rem] leading-relaxed text-paper/85">
             <p>
-              I&rsquo;m a full-stack engineer working on AI at Sanmina, in Huntsville,
-              Alabama.
+              I&rsquo;m a full-stack engineer working on AI at Sanmina, remote from
+              Daphne, Alabama.
             </p>
             <p>
-              I came up through a Computer Science degree at Sussex, spent a year and a
-              half at QatarEnergy LNG delivering enterprise software into a regulated
-              environment, and now design the AI workflows that replace processes people
-              used to do by hand.
+              I came up through a Computer Science degree at Sussex, spent a year at
+              QatarEnergy LNG delivering enterprise software into a regulated environment,
+              and now design the AI workflows that replace processes people used to do by
+              hand. I&rsquo;m working through an MSc in Computer Science at the University
+              of Illinois alongside it.
             </p>
             <p>
               The work I like best sits where a system meets the physical world, or the
