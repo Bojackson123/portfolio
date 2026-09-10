@@ -1,7 +1,8 @@
 # Assets
 
-No placeholders remain. The two featured projects carry their schematic
-diagrams and no screenshot — the diagrams are the evidence.
+No placeholders remain. All four featured projects carry a schematic
+diagram; only Meridian also carries a screenshot — for the rest, the
+diagrams are the evidence.
 
 ## Adding a project screenshot
 
@@ -52,5 +53,9 @@ pointing it at the new file.
 - `og-image.png` — the social share card. Regenerate with
   `node scripts/generate-assets.mjs` if the hero copy or job title changes.
 - `work/concept-*.webp` — live screenshots of the three concept sites.
+- `work/meridian-console.webp` — a single frame (1600 × 792) from the
+  `docs/demo-v1.0.gif` in the Meridian repo, chosen for the moment one
+  aircraft has gone stale. Re-extract with `sharp(gif, { page: n })` if the
+  demo is re-recorded.
 - `favicon.svg` — hand-written monogram.
 - `rashid-al-marri-cv.pdf` — replace whenever the CV is updated.

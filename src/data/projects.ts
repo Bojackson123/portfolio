@@ -14,7 +14,7 @@ export type Project = {
   stack: string[]
   links: ProjectLink[]
   /** Flagships render a schematic; supporting work does not. */
-  diagram?: 'signal-path' | 'dispatch'
+  diagram?: 'signal-path' | 'dispatch' | 'retrieval' | 'telemetry'
   /** A second schematic, rendered full width below the two columns. */
   wideDiagram?: 'security-boundary'
   image?: { src: string; alt: string; width: number; height: number }
@@ -24,6 +24,71 @@ export type Project = {
 }
 
 export const projects: Project[] = [
+  {
+    id: 'warrant',
+    name: 'Warrant',
+    tagline: 'Question answering over NIST SP 800-53, where every claim names the control that warrants it',
+    summary:
+      'Compliance answers are only useful if you can check them. Warrant embeds the full NIST SP 800-53 catalog — 1,014 controls from the OSCAL source — into Postgres with pgvector, retrieves the controls that bear on a question, and tags every sentence of the answer to the control ID that supports it, with the clause itself one click away. I chose the embedding model by measurement rather than habit: four candidates run on CPU against a 42-question golden set, with recall@5 and latency recorded for each. Recorded answer fixtures mean the whole pipeline replays deterministically, so the tests never need an API key.',
+    meta: [
+      { key: 'Role', value: 'Solo — corpus to console' },
+      { key: 'Period', value: 'Aug 2026' },
+      { key: 'Scale', value: '1,014 controls · 42-question golden set' },
+      { key: 'Measure', value: 'recall@5 0.679 · retrieval under 80 ms' },
+    ],
+    stack: [
+      'Python',
+      'FastAPI',
+      'PostgreSQL',
+      'pgvector',
+      'bge-base-en-v1.5',
+      'OSCAL',
+      'React',
+      'TypeScript',
+      'Vite',
+      'Docker Compose',
+    ],
+    links: [{ label: 'Source', href: 'https://github.com/Bojackson123/warrant' }],
+    diagram: 'retrieval',
+    featured: true,
+  },
+  {
+    id: 'meridian',
+    name: 'Meridian Control Station',
+    tagline: 'A ground station that tells you how old its data is',
+    summary:
+      'A ground control station for simulated uncrewed aircraft, built around one rule: the console says exactly what it last heard and never pretends otherwise. The MAVLink v2 codec is hand-written and verified byte-for-byte against pymavlink vectors; the aircraft flies in its own process and speaks UDP; an ASP.NET Core service ingests into a bounded twelve-vehicle store and streams it to a React and MapLibre console over Server-Sent Events. Nothing is interpolated — at three seconds without a heartbeat a marker goes stale with its age on screen, and at fifteen it is marked lost. The requirements table names the two items still unverified rather than smoothing them over.',
+    meta: [
+      { key: 'Role', value: 'Solo — codec to console' },
+      { key: 'Period', value: 'Aug 2026' },
+      { key: 'Scale', value: '12 simulated aircraft · 4 unit suites + Testcontainers' },
+      { key: 'Design', value: 'Age is always visible; no colour-only states' },
+    ],
+    stack: [
+      '.NET 10',
+      'ASP.NET Core',
+      'MAVLink v2',
+      'UDP',
+      'PostgreSQL 18',
+      'Server-Sent Events',
+      'React',
+      'TypeScript',
+      'MapLibre GL',
+      'Testcontainers',
+      'Docker Compose',
+    ],
+    links: [
+      { label: 'Source', href: 'https://github.com/Bojackson123/meridian-control-station' },
+    ],
+    diagram: 'telemetry',
+    image: {
+      src: '/work/meridian-console.webp',
+      alt: 'Meridian console showing twelve aircraft on a dark basemap, one marked stale in amber with a nine-second age counter',
+      width: 1600,
+      height: 792,
+    },
+    featured: true,
+  },
   {
     id: 'sentinel',
     name: 'Sentinel',
@@ -83,20 +148,6 @@ export const projects: Project[] = [
     diagram: 'dispatch',
     wideDiagram: 'security-boundary',
     featured: true,
-  },
-  {
-    id: 'qatarenergy',
-    name: 'QatarEnergy LNG',
-    tagline: 'Four applications, three go-lives, 100+ features shipped',
-    summary:
-      'Lead or sole developer on business-critical internal applications in a regulated environment — 100+ features across four applications and three system integrations, each used daily by 100–500+ people. I owned the whole lifecycle, from requirements through production support: three production releases, 20+ controlled deployments, and escalation ownership of two mission-critical systems. I cut a critical path from ten seconds to under one, set the React and TypeScript component standards a six-developer team built against, and established the Playwright suite that kept releases honest.',
-    meta: [
-      { key: 'Role', value: 'Lead or sole developer' },
-      { key: 'Period', value: 'Mar 2025 – May 2026' },
-      { key: 'Scale', value: '100–500+ daily users per app' },
-    ],
-    stack: ['C#', '.NET', 'React', 'TypeScript', 'SQL', 'SAP BTP', 'Playwright', 'Azure'],
-    links: [],
   },
   {
     id: 'concept-sites',

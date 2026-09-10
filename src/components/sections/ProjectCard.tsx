@@ -2,6 +2,8 @@ import type { Project } from '../../data/projects'
 import { SignalPath } from '../diagrams/SignalPath'
 import { Dispatch } from '../diagrams/Dispatch'
 import { SecurityBoundary } from '../diagrams/SecurityBoundary'
+import { Retrieval } from '../diagrams/Retrieval'
+import { Telemetry } from '../diagrams/Telemetry'
 import { Chip } from '../ui/Chip'
 import { ExternalLink } from '../ui/ExternalLink'
 import { ArrowIcon } from '../ui/Icons'
@@ -11,6 +13,8 @@ import { Reveal } from '../ui/Reveal'
 function Diagram({ kind }: { kind: Project['diagram'] }) {
   if (kind === 'signal-path') return <SignalPath />
   if (kind === 'dispatch') return <Dispatch />
+  if (kind === 'retrieval') return <Retrieval />
+  if (kind === 'telemetry') return <Telemetry />
   return null
 }
 
