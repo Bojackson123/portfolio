@@ -11,7 +11,7 @@ export function Work() {
       id="work"
       eyebrow="Selected work"
       title="Built end to end."
-      lede="Two projects I would want to be judged on, followed by the professional and academic work behind them."
+      lede="Four projects I would want to be judged on, followed by the academic and self-initiated work behind them."
     >
       <div className="flex flex-col gap-16 lg:gap-24">
         {featured.map((project) => (
